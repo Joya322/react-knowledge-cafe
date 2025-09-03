@@ -3,7 +3,6 @@ import "./App.css";
 import Blogs from "./components/Blogs/Blogs";
 import BookMarks from "./components/BookMarks/BookMarks";
 import Header from "./components/Header/Header";
-import { element } from "prop-types";
 
 function App() {
   const [readingTime, setReadingTime] = useState(0);
