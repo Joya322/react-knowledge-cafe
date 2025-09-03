@@ -2,22 +2,23 @@ import { useEffect, useState } from "react";
 import Blog from "../Blog/Blog";
 
 const Blogs = () => {
-    const [blogs, setBlogs] = useState([]);
+  const [blogs, setBlogs] = useState([]);
 
-    // load data
-    useEffect(() => {
-        fetch("blogs.json").then(res => res.json()).then(data=> setBlogs(data))
-    }, [])
-    
+  // load data
+  useEffect(() => {
+    fetch("blogs.json")
+      .then((res) => res.json())
+      .then((data) => setBlogs(data));
+  }, []);
 
-    return (
-      <div className="md:w-2/3">
-        <h2>
-          blogs: {blogs.length}
-          <Blog></Blog>
-        </h2>
-      </div>
-    );
+  return (
+    <div className="md:w-2/3">
+      {/* <h2>blogs: {blogs.length}</h2> */}
+      {blogs.map((blog) => (
+        <Blog key={blog.id} blog={blog}></Blog>
+      ))}
+    </div>
+  );
 };
 
 export default Blogs;
