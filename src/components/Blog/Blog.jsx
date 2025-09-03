@@ -53,14 +53,14 @@ const Blog = ({ blog, handleReadingTime, handleBookMarks}) => {
       </div>
 
       {/* mark as read */}
-      <a
+      <p
         onClick={() => {
           handleReadingTime(reading_time);
         }}
-        className="text-xl font-semibold underline text-blue-600"
-      >
+        className="text-xl font-semibold underline text-blue-600 cursor-default"
+>
         Mark as read
-      </a>
+      </p>
     </div>
   );
 };

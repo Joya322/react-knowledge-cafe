@@ -3,6 +3,7 @@ import "./App.css";
 import Blogs from "./components/Blogs/Blogs";
 import BookMarks from "./components/BookMarks/BookMarks";
 import Header from "./components/Header/Header";
+import { element } from "prop-types";
 
 function App() {
   const [readingTime, setReadingTime] = useState(0);
@@ -19,7 +20,14 @@ function App() {
     const newTitleList = [...bookMarks, title];
     setBookMarks(newTitleList);
   };
-  console.log(bookMarks);
+
+  const handleClearBookMark = (id) => {
+    const newBookMarkList = bookMarks.filter((element, idx) => element[idx] !== element[id]);
+    
+    
+    setBookMarks(newBookMarkList);
+  };
+  // console.log(bookMarks);
   return (
     <>
       <Header />
@@ -28,7 +36,11 @@ function App() {
           handleReadingTime={handleReadingTime}
           handleBookMarks={handleBookMarks}
         />
-        <BookMarks />
+        <BookMarks
+          bookMarks={bookMarks}
+          readingTime={readingTime}
+          handleClearBookMark={handleClearBookMark}
+        />
       </main>
     </>
   );
