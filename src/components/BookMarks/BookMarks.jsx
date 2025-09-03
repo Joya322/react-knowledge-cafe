@@ -2,7 +2,7 @@ const BookMarks = () => {
   return (
     <div className="md:w-1/3 py-8">
       {/* total reading time */}
-      <div className="bg-[rgba(96,71,236,0.1)] py-5 text-center rounded-lg">
+      <div className="bg-[rgba(96,71,236,0.1)] p-5 text-center rounded-lg">
         <p className="text-2xl text-[rgba(96,71,236,1)] font-bold">
           Spent time on read : 177 min
         </p>
